@@ -32,15 +32,8 @@ header {
     box-sizing: border-box;
 }
 
-.wrap-content {
-    width: 960px;
-    margin: 0 auto;
-    border: 1px solid black;
-    box-sizing: border-box;
-}
-
-.wrap-nav> nav > ul > li,
-footer > nav > ul > li{
+.wrap-nav>nav>ul>li,
+footer>nav>ul>li {
     /* 안에  nav > ul > 생략 가능*/
     /* 보통 li에 많이 씀(옆으로 나타냄) */
     display: inline-block;
@@ -51,16 +44,31 @@ footer > nav > ul > li{
     /* 각각에 줄 수도있음 (시계방향으로)*/
 }
 
-.wrap > .wrap-main{
+.wrap>.wrap-main {
     margin-bottom: 10px;
 }
 
+.wrap-content {
+    /* 나의 자식들의 기준점 0,0 */
+    position: relative;
+    /* left: 10px;
+    top: 15px; */
+    overflow: hidden;
+    width: 960px;
+    margin: 0 auto;
+    border: 1px solid black;
+    box-sizing: border-box;
+}
+
 section {
-    /* layout - 02
+    /* layout - 04
      display:block이지만 일부영역만 사용.
      float : left정렬
      width : 지정
       */
+    position: relative;
+    top: 0;
+    left: 0;
     display: inline-block;
     width: 80%;
     background-color: azure;
@@ -73,11 +81,14 @@ article {
 }
 
 aside {
-    /* layout - 02
+    /* layout - 04
      display:block이지만 일부영역만 사용.
      float : left정렬
      width : 지정
       */
+    position: absolute;
+    top: 0;
+    right: 0;
     display: inline-block;
     width: 15%;
     background-color: bisque;
@@ -86,9 +97,10 @@ aside {
 }
 
 footer {
-    /* layout - 02
-     display:block이지만 일부영역만 사용하다 다시 block 수직정렬하고 싶을때
-     clear : both; 
+    /* layout - 04
+     display:block이지만 일부영역만 사용.
+     float : left정렬
+     width : 지정
       */
     clear: both;
     border: 1px solid black;
