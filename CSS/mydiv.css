@@ -39,6 +39,11 @@ header {
     box-sizing: border-box;
 }
 
+nav > ul > li{
+    display: inline-block;
+    padding: 10px;
+    margin: 0 5px;
+}
 section {
     /* layout - 02
      display:block이지만 일부영역만 사용.
