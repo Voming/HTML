@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        @import url(../CSS/my.css);
+        /* ""를 사용하지 않음 */
+    </style>
+    <!-- <link href="../CSS/my.css" rel="stylesheet"> -->
+</head>
+
+<body>
+    <!-- ul 옆에는 절대 작성하면 안되고 il 태그외에 다른 거 사용 금지 -->
+    <ul>
+        <li>내용입니다.</li>
+        <li>
+            <div>sebmenu</div>
+            <ul>
+
+                <li>서브 내용입니다.</li>
+                <li>서브 내용입니다.</li>
+            </ul>
+        </li>
+        <li>내용입니다.</li>
+        <li>내용입니다.</li>
+    </ul>
+
+    <!-- 앞에 붙을 것의 타입과 시작 위치 -->
+    <ol type="i" start="5">
+        <li>메뉴</li>
+        <li>메뉴</li>
+        <li>메뉴</li>
+        <li>메뉴</li>
+    </ol>
+
+    <dd>
+    <dt>타이틀</dt>
+    <dd> 내용 1</dd>
+    <dd> 내용 1</dd>
+    <dd> 내용 1</dd>
+    <dd> 내용 1</dd>
+    </dd>
+
+    <h1>표 태그</h1>
+    <!-- border="1" 테이블 선의 두께 테이블 전체에 그려지는 선 -->
+    <!-- td가 sel 개념을 가지고 있고 sal 각각에 테두리 선이 들어있음 -->
+    <table border="5">
+        <caption>표1 - caption 표시</caption>
+        <tbody>
+            <tr>
+                <td>내용1</td>
+                <td>내용2</td>
+                <td>내용3</td>
+                <td>내용4</td>
+            </tr>
+            <tr>
+                <td>내용5</td>
+                <td>내용6</td>
+                <td>내용7</td>
+                <td>내용8</td>
+            </tr>
+            <tr>
+                <td>내용9</td>
+                <td>내용10</td>
+                <td>내용11</td>
+                <td>내용12</td>
+            </tr>
+        </tbody>
+    </table>
+    <!-- 행병합 -->
+    <figure>
+        <figcaption>표2 - 제목1</figcaption>
+        <table border="5">
+            <tr>
+                <td rowspan="3">내용1</td>
+                <td colspan="2">내용2</td>
+
+                <td rowspan="2">내용4</td>
+            </tr>
+            <tr>
+
+                <td colspan="2">내용6</td>
+
+
+            </tr>
+            <tr>
+
+                <td>내용10</td>
+                <td>내용11</td>
+                <td>내용12</td>
+            </tr>
+        </table>
+        <figcaption>표2 - 제목2</figcaption>
+    </figure>
+    <!-- 열병합 -->
+    <table border="5">
+        <thead>
+            <tr>
+                <th>내용1</th>
+                <td>내용2</td>
+                <td>내용3</td>
+                <td>내용4</td>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <th>내용5</th>
+                <td>내용6</td>
+                <td>내용7</td>
+                <td>내용8</td>
+            </tr>
+        </tbody>
+        <tfoot>
+            <tr>
+                <th>내용9</th>
+                <td>내용10</td>
+                <td>내용11</td>
+                <td>내용12</td>
+            </tr>
+        </tfoot>
+    </table>
+    <br>
+    <p><strong><small>제목 태그 테스트</small></strong></p>
+    <h1>제목1</h1>
+    <h2>제목2</h2>
+    <h3>제목3</h3>
+    <h4>제목4</h4>
+    <h5>제목5</h5>
+
+    <!-- 기울임 -->
+    <p><em>첫 코드입니다</em></p>
+
+    <!-- 가로줄 -->
+    <hr>
+
+    <p>
+        첫 코드입니다.첫 코드입니다.첫 코드입니다.첫 코드입니다.첫 코드입니다.
+        첫 코드입니다.첫 코드입니다.첫 코드입니다.첫 코드입니다.
+    </p>
+    <!-- ctrl / 으로 주석 but client까지 전달 된다. -->
+    "안녕하세요." &nbsp;&nbsp;&nbsp; "반갑습니다"<br>
+    html 처음입니다.<br>
+
+    첫 코드입니다.<br>
+    <p> 결과는?</p>
+    <br>
+    <br>
+    live server start up 단축키 : alt + L - o<br>
+</body>
+
+</html>
