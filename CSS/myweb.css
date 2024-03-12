@@ -1,0 +1,181 @@
+/* 작업순서 */
+/* 폰트 정하기 */
+/* 기본(최적) 해상도 맞추기 (ex 960px)  */
+/* // <uniquifier>: Use a unique and descriptive class name
+// <weight>: Use a value from 100 to 900 */
+
+.noto-serif kr-regular {
+    font-family: "Noto Serif KR", serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 24px;
+}
+
+body {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 1em;
+}
+
+.wrap-header {
+    /* width: 100%; 생략되어 있음 content만 960인 상태 */
+    background-color: rgb(224, 238, 245);
+    /* 자식 elements의 높이를 정확히 계산함 */
+    overflow: hidden;
+}
+
+header {
+    /* 1. 중앙 정렬 */
+    width: 960px;
+    margin: 0 auto;
+
+    /* margin 
+    부모가 자식의 크기를 전부 인식 못함*/
+    /* margin-bottom: 10px; */
+    padding-bottom: 10px;
+    position: relative;
+    height: 160px;
+}
+
+/* position 배치 */
+header nav.tnb {
+    position: absolute;
+    right: 0;
+}
+
+/* position 배치 */
+header nav.bnb {
+    position: absolute;
+    right: 0;
+    bottom: 10px;
+}
+
+/* position 배치 */
+header div.logo {
+    position: absolute;
+    left: 50px;
+    top: 50px;
+    font-size: 30px;
+}
+
+.wrap-main {
+    /* 1. 중앙 정렬 */
+    width: 960px;
+    margin: 0 auto;
+    /* 테두리 */
+    box-sizing: border-box;
+}
+
+section {
+    /* float 배치 */
+    float: left;
+    width: 750px;
+    background-color: azure;
+}
+
+article {
+    /* 테두리 */
+    border: 1px solid black;
+    box-sizing: border-box;
+    margin-bottom: 10px;
+    padding: 20px;
+}
+
+article:last-child {
+    /* article보다 우선권을 가진다 */
+    margin-bottom: 0;
+}
+
+aside {
+    /* float 배치 */
+    float: right;
+    width: 200px;
+    background-color: rgb(171, 208, 250);
+    /* 테두리 */
+    border: 1px solid black;
+    box-sizing: border-box;
+}
+
+.wrap-footer {
+    /* float 배치 */
+    clear: both;
+    background-color: rgb(224, 238, 245);
+    position: relative;
+
+}
+
+footer {
+    /* 1. 중앙 정렬 */
+    width: 960px;
+    margin: 0 auto;
+}
+
+footer>h3 {
+    font-size: 20px;
+    font-style: bold;
+}
+
+ul {
+    /* float의 부모노드 overflow hidden */
+    overflow: hidden;
+}
+
+ul>li {
+    /* display: inline-block; */
+    /* 줄바꿈을 위함 */
+    float: left;
+    /* border: 1px solid black; */
+
+}
+
+nav>ul>li>a {
+    border-top: 1px solid black;
+    border-bottom: 1px solid black;
+    border-right: 1px solid black;
+}
+
+nav>ul>li:first-child>a {
+    border-left: 1px solid black;
+    border-radius: 10px 0 0 10px;
+}
+
+nav>ul>li:last-child>a {
+    border-right: 1px solid black;
+    border-radius: 0 10px 10px 0;
+}
+
+nav.tnb>ul>li:first-child>a {
+    border-left: 1px solid black;
+    border-radius: 5px 0 0 5px;
+}
+
+nav.tnb>ul>li:last-child>a {
+    border-right: 1px solid black;
+    border-radius: 0 5px 5px 0;
+}
+
+nav.bnb,
+.logo {
+    /* float 의 동위요소에 clear */
+    clear: both;
+}
+
+nav>ul>li>a {
+    display: inline-block;
+    padding: 10px;
+    text-decoration: none;
+    color: black;
+}
+
+/* a:link{
+    color: aqua;
+}
+a:visited{
+    color: yellow;
+}
+a:active{
+    color: red;
+} */
+nav>ul>li>a:hover {
+    color: white;
+    background-color: black;
+}
