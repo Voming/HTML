@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h2>상품구성</h2>
+    <table border="1">
+        <caption>
+            선물용과 가정용 상품 구성
+        </caption>
+        <colgroup>
+            <col style="background-color: #eee;">
+            <col>
+            <col span="2" style="width:150px;">
+        </colgroup>
+        <thead>
+            <tr>
+                <th>용도</th>
+                <th>중량</th>
+                <th>개수</th>
+                <th>가격</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <th rowspan="2">가정용</th>
+                <th>3kg</th>
+                <th>11~16과</th>
+                <th>35,000원</th>
+            </tr>
+            <tr>
+
+                <th>3kg</th>
+                <th>11~16과</th>
+                <th>35,000원</th>
+            </tr>
+            <tr>
+                <th rowspan="2">선물용</th>
+                <th>3kg</th>
+                <th>11~16과</th>
+                <th>35,000원</th>
+            </tr>
+            <tr>
+                <th>3kg</th>
+                <th>11~16과</th>
+                <th>35,000원</th>
+            </tr>
+        </tbody>
+    </table>
+
+    <p>
+        원래 크기의 이미지
+    </p>
+    <img src="../images/google.png" ale="구글">
+    <p>width="50%", height="50%"로 지정한 이미지</p>
+    <img src="../images/google.png" ale="구글" width="50%">
+
+    <div>
+        <p><a href="./20240311_div_03.html"> 링크 이동하기</a></p>
+    </div>
+
+    <h5>이미지 링크 만들기</h5>
+    <a href="./20240311_div_03.html"><img src="../images/google.png" alt="구글" width="30%"></a>
+
+    <h5>외부 링크로 이동하기</h5>
+    <p><a href="https://map.naver.com/p?c=15.00,0,0,0,dh" target="_blank">네이버 지도 보기</a></p>
+
+    <h2>form 태그</h2>
+    <form action="">
+        <fieldset>
+            <legend>상품 선택</legend>
+        </fieldset>
+        <fieldset>
+            <legend>배송 정보</legend>
+        </fieldset>
+    </form>
+    <br>
+    <form action="" >
+        <label>아이디(6자 이상)<input type="text" id="user_id" size="10"></label>
+        <label>비밀번호(6자 이상)<input type="password" id="user_pw" size="10"></label>
+        <input type="submit" value="로그인">
+    </form>
+    <br>
+    <br>
+  
+    <div style="height: auto; width: 100%; border:1px solid black; ">
+        <h2>정보 입력하는 폼태그 만들기</h2>
+        <form action="">
+            <ul>
+                <li>
+                    <label for="user_name">이름</label>
+                    <input type="text" id="user_name">
+                </li>
+                <li>
+                    <label for="addr">배송 주소</label>
+                    <input type="text" id="addr">
+                </li>
+                <li>
+                    <label for="mail">메일 주소</label>
+                    <input type="text" id="mail">
+                </li>
+            </ul>
+        </form>
+    </div>
+    <br>
+    <fieldset>
+        <legend>상품 선택</legend>
+        <p><b>주문할 상품을 선택하세요</b></p>
+        <label><input type="checkbox" value="s_3">선물용 3kg</label>
+        <label><input type="checkbox" value="s_5">선물용 5kg</label>
+        <label><input type="checkbox" value="f_3">가정용 3kg</label>
+        <label><input type="checkbox" value="f_5">가정용 5kg</label>
+    </fieldset>
+    <fieldset>
+        <legend>포장 선택</legend>
+        <label><input type="radio" name="gift" value="yes">선물포장</label>
+        <label><input type="radio" name="gift" value="no">선물포장 안함</label>
+    </fieldset>
+
+
+</body>
+
+</html>
