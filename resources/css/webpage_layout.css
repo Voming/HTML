@@ -1,0 +1,33 @@
+.wrap-header {
+    background-color: aliceblue;
+}
+
+.wrap-header>header,
+.wrap-footer>footer {
+    width: 960px;
+    margin: 0 auto;
+}
+
+.wrap-footer {
+    background-color: aliceblue;
+    /* float 배치 해제 */
+    clear: both;
+}
+
+.wrap-main {
+    background-color: #ffd;
+    /* 중앙배치 */
+    width: 960px;
+    margin: 0 auto;
+}
+
+.wrap-main>section{
+    width: 750px;
+    float: left;
+}
+
+.wrap-main>aside{
+    width: 200px;
+    float: left;
+}
+
