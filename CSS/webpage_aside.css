@@ -1,17 +1,40 @@
-ul>li>a>div:first-child{
+aside {
+    border: 1px solid black;
+}
+
+aside ul>li {
+    /* float 해제 */
+    clear: both;
+    /* float 부모 */
+    overflow: hidden;
+    font-size: 18px;
+
+    padding: 10px;
+
+    border-top: 1px solid black;
+}
+
+
+aside ul>li>a>div:first-child {
     /* float 설정 */
     float: left;
     width: 45px;
+
+    margin-right: 10px;
 }
 
-ul>li>a>div:last-child{
+aside ul>li>a>div:last-child {
     /* float 설정 */
     float: left;
     width: 120px;
 }
 
-aside input[type=radio]{
+/* radio 보였다 안보였다 */
+aside input[type=radio] {
+    /* 공간 차지 없게 */
     display: none;
+
+
 }
 
 aside input[type=radio]:nth-of-type(1):checked~div:nth-of-type(1) {

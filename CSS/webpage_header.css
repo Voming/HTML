@@ -1,0 +1,63 @@
+header nav>ul {
+    /* float-부모 */
+    overflow: hidden;
+}
+
+header nav>ul>li {
+    float: left;
+}
+
+header nav,
+header div.logo {
+    clear: both;
+}
+
+header {
+    /* 자식들의 기준점 */
+    position: relative;
+    /* 자식 기준이라면 높이도 세트로 나타나야함 */
+    height: 150px; 
+}
+
+header .tnb {
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+
+header .bnb {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+}
+
+header .logo {
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+/* li-a 링크 padding, border-background */
+header a{
+    display: inline-block;
+    border: 1px solid black;
+}
+header .tnb a{
+    padding: 5px 10px;
+}
+
+header .bnb a{
+    padding: 10px 15px;
+}
+
+header li:first-child >a{
+    border-radius: 15px 0 0 15px;
+}
+header li:last-child >a{
+    border-radius: 0 15px 15px 0;
+}
+
+header a:hover{
+    background-color: black;
+    color: white;
+}
