@@ -1,5 +1,6 @@
 aside {
     border: 1px solid black;
+    box-sizing: border-box;
 }
 
 aside ul>li {
@@ -33,20 +34,22 @@ aside ul>li>a>div:last-child {
 aside input[type=radio] {
     /* 공간 차지 없게 */
     display: none;
-
-
+    flex-grow: 1;
 }
 
 aside input[type=radio]:nth-of-type(1):checked~div:nth-of-type(1) {
     display: block;
+   
 }
 
 aside input[type=radio]:nth-of-type(1):checked~div:nth-of-type(2) {
     display: none;
+  
 }
 
 aside input[type=radio]:nth-of-type(2):checked~div:nth-of-type(1) {
     display: none;
+  
 }
 
 aside input[type=radio]:nth-of-type(2):checked~div:nth-of-type(2) {
