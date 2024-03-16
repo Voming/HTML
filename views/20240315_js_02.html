@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript 01</title>
+
+</head>
+<body>
+    <h1 id="id2">JavaScript 처음</h1>
+    <h1 class="c2">JavaScript 처음2</h1>
+    <h1 class="c2">JavaScript 처음3</h1>
+    <script>
+        f1();  /// 위 함수 호출 실행
+        //오류console.log("이곳 -6 : a3 : " + a3);
+        console.log("이곳 -6 : a4 : " + a4);
+
+        var a1 = 1;  // 전역
+        console.log("이곳 - 1 : a1 : " + a1);
+        console.log("이곳 - 1 : a2 : " + a2);
+        //오류 console.log("이곳 - 1 : a3 : " + a3);
+        //오류 console.log("이곳 - 1 : a4 : " + a4);
+        {
+            var a2 = 2; // 전역(함수 안이 아니기 때문)
+            console.log("이곳 - 2 : a1 : " + a1);
+            console.log("이곳 - 2 : a2 : " + a2);
+            //오류 console.log("이곳 - 2 : a3 : " + a3);
+            //오류 console.log("이곳 - 2 : a4 : " + a4);
+        }
+        function f1 () {  //function이 먼저 써져있으면 문서를 다 읽기전에 미리 알 수 있음
+            a4 = 4;   //차례대로 읽히는 전역
+            var a3 = 3; // 지역
+            console.log("이곳 - 3 : a1 : " + a1);
+            console.log("이곳 - 3 : a2 : " + a2);
+            console.log("이곳 - 3 : a3 : " + a3);
+            console.log("이곳 - 3 : a4 : " + a4);
+        }
+
+        //오류console.log("이곳 - 5 : a4 : " + a4);
+    </script>
+    <script>
+        f1();  /// 위 함수 호출 실행
+        console.log("이곳 - 4 : a1 : " + a1);
+        console.log("이곳 - 4 : a2 : " + a2);
+        //오류 console.log("이곳 - 4 : a3 : " + a3);
+        console.log("이곳 - 4 : a4 : " + a4);
+    </script>
+</body>
+</html>
