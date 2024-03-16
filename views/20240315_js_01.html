@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        //디버깅 용도로 많이 쓰임
+        document.write("1안녕");
+        document.write("1하세요");
+        //띄어쓰기가 반영되지 않음
+    </script>
+</head>
+
+<body>
+    <h1 id="id2">JavaScript 처음0</h1>
+    <h1 class="c2">JavaScript 처음1</h1>
+    <h1 class="c2">JavaScript 처음2</h1>
+
+    <script>
+        var a3 = document.getElementById("id2");
+        console.log(a3);
+        var a4 = document.getElementsByClassName("c2");
+        console.log(a4);
+        var a5 = document.getElementsByTagName("h1");
+        console.log(a5);
+        var a6 = document.querySelector(".c2");  //두개중에 첫번째꺼 보여줌
+        console.log(a6);
+        var a7 = document.querySelectorAll(".c2");  //두개 다 보여줌
+        console.log(a7);
+
+        var a8 = true;
+        console.log(typeof a8);
+        var a9 = 123.123;
+        console.log(typeof a9);
+        var a10;
+        console.log(typeof a10);
+
+        var a11 = {
+            k1: 123, name: "홍길동", gender: "f"
+            , score: { kor: 100, eng: 90, math: 70 }
+        };
+        console.log(a11);
+        console.log(a11.k1);
+        console.log(a11.score.math);
+
+    </script>
+
+    <script>
+        document.write("2안녕");
+        document.write("2하세요");
+        //띄어쓰기가 반영되지 않음
+    </script>
+    <script>
+        document.write("안녕");
+        //window.alert("경고문구");
+        //화면 공백에서 뿌려짐
+        //alert이 가장먼저 반응하기 때문에 안녕이 뒤에 뜨지 않음
+        //화면이 보여지는 상태에서 뿌려지려면 ajax(비동기 방식)
+
+        document.getElementsByTagName("h1")[1].innerHTML = '<a href="#">바꿈문자</a>';
+        document.getElementsByTagName("h1")[2].innerText = '<a href="#">바꿈문자</a>';
+    </script>
+    <script>
+        // var a1 = window.prompt();
+        // document.getElementsByTagName("h1")[0].innerHTML=a1;
+        // console.log(a1);
+        // var a2 = window.confirm();
+        // console.log(a2);
+    </script>
+</body>
+
+</html>
