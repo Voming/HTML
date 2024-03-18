@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <button type="button" id="btn1">버튼 1</button>
+    <button type="button" id="btn2">버튼 2</button>
+    <!-- 실행까지 해주는 인라인 방식 -->
+    <!-- <button type="button" id="btn3" onclick="(function(){
+        console.log('인라인 방식 : 이벤트가 발생하여 callback함수 호출됨');
+    })()">버튼 3</button> -->
+    <button type="button" id="btn3" onclick="cbF3(); console.log('여러줄 가능');">버튼 3</button>
+
+    <script>
+         var cbF1 = function(){
+            console.log("고전방식 이벤트 발생하여 callback함수 호출되었다");
+        };
+        var cbF2 = function(){
+            console.log("고전방식 이벤트 발생하여 callback함수 호출될 수 있도록 ()를 붙여서 실행..");
+        };
+        var cbF3 = function(){
+            console.log("인라인 방식 : 이벤트 발생하여 callback함수 호출되었다");
+        };
+
+
+        var btnElem = document.getElementById("btn1");
+        console.log(btnElem);
+        console.log(typeof btnElem);   //object
+        // btnElem.onclick = function () {
+        //     console.log("고전방식 이벤트 발생하여 callback함수 호출되었다");
+        // };
+        btnElem.onclick = cbF1;  //괄호 치지 않음
+
+        var btnElem2 = document.getElementById("btn2");
+        // btnElem2.addEventListener("click", function () {
+        //     console.log("고전방식 이벤트 발생하여 callback함수 호출되었다");
+        // });
+        btnElem2.addEventListener("click", cbF2);  //괄호 치지 않음
+       
+    </script>
+    <script>
+        function f1(a1, a2, a3) {
+            
+        }
+    </script>
+</body>
+
+</html>
