@@ -16,15 +16,25 @@
     })()">버튼 3</button> -->
     <button type="button" id="btn3" onclick="cbF3(); console.log('여러줄 가능');">버튼 3</button>
 
+    <!-- onsubmit에 쓸 frm-test -->
+    <form method="get" actino="#" id="frm-test">  
+        <input type="text" name="n1">
+        <!-- 원래 false 였다가 inline 까지만 되고 submit이 안됨 -->
+        <!-- onclick을 쓸때는 의도에 맞게 짜야함 -->
+        <!-- id와 이벤트 등록을 혼합해서 사용하지 말기, 혼선을 줌 -->
+        <button type="submit" onclick="return cbF3();">전달</button>
+    </form>
+
     <script>
          var cbF1 = function(){
-            console.log("고전방식 이벤트 발생하여 callback함수 호출되었다");
+            console.log("고전 방식 : 이벤트 발생하여 callback함수 호출되었다");
         };
-        var cbF2 = function(){
-            console.log("고전방식 이벤트 발생하여 callback함수 호출될 수 있도록 ()를 붙여서 실행..");
+        function cbF2(){
+            console.log("표준 방식 : 이벤트 발생하여 callback함수 호출..");
         };
         var cbF3 = function(){
             console.log("인라인 방식 : 이벤트 발생하여 callback함수 호출되었다");
+            return false;  //submit 되게 할건지 말건지(중복확인 같은 곳에서 사용)
         };
 
 
@@ -41,13 +51,22 @@
         //     console.log("고전방식 이벤트 발생하여 callback함수 호출되었다");
         // });
         btnElem2.addEventListener("click", cbF2);  //괄호 치지 않음
-       
+
+        //하면 안되는 행동
+        var btnElem3 = document.getElementById("btn3");
+        btnElem3.addEventListener("click", cbF2);
+        //btnElem3.onclick = cbF1;
+        //결과 : 인라인은 사라지고 고전 -> 표준 순으로 실행된다.
+        //만약 인라인, 표준만 있으면 둘다 실행됨(인라인 -> 표준)
+        //만약 고전, 표준만 있으면 둘다 실행됨(순서는 입력한대로)
+        //만약 인라인, 고전만 있으면 고전만 실행됨(사실상 고전과 인라인은 같음)
+
+        var frmEle = document.getElementById("frm-test");
+        frmEle.onsubmit = cbF1;  //메시지가 순식간에 사라짐
+
+
     </script>
-    <script>
-        function f1(a1, a2, a3) {
-            
-        }
-    </script>
+   
 </body>
 
 </html>
