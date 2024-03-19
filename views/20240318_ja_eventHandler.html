@@ -17,7 +17,7 @@
     <button type="button" id="btn3" onclick="cbF3(); console.log('여러줄 가능');">버튼 3</button>
 
     <!-- onsubmit에 쓸 frm-test -->
-    <form method="get" actino="#" id="frm-test">  
+    <form method="get" actino="#" id="frm-test">
         <input type="text" name="n1">
         <!-- 원래 false 였다가 inline 까지만 되고 submit이 안됨 -->
         <!-- onclick을 쓸때는 의도에 맞게 짜야함 -->
@@ -25,14 +25,67 @@
         <button type="submit" onclick="return cbF3();">전달</button>
     </form>
 
+    <button type="button" id="btn-add">추가</button>
+    <table border="1">
+        <thead>
+            <tr id="tbl-col">
+                <td style="color: red;">칼럼명</td>
+                <td>칼럼명</td>
+            </tr>
+            <!-- <tr>
+                <td>1</td>
+                <td>칼럼명</td>
+            </tr>
+            <tr>
+                <td>2</td>
+                <td>칼럼명</td>  이런 식으로 추가 되기를 원함-->
+            </tr>
+        </thead>
+        <tbody>
+
+        </tbody>
+    </table>
+
     <script>
-         var cbF1 = function(){
+        let count = 1;
+        var cbF4 = function () {
+            // 방법 1
+            console.log("cbF4동작확인");
+            var htmlValue = "";
+            htmlValue += '<tr>';
+            htmlValue += '    <td>' + count + '</td>';
+            htmlValue += '    <td>칼럼명' + count + '</td>';
+            htmlValue += '</tr>';
+            document.getElementsByTagName("tbody")[0].innerHTML += htmlValue; // 계속 들어가게 하려면 +=를 사용해줌
+
+            // 방법 2
+            var nodeTr = document.createElement("tr");
+            var nodeTd1 = document.createElement("td");
+            var nodeTd2 = document.createElement("td");
+            var nodetext1 = document.createTextNode(count);
+            var nodetext2 = document.createTextNode("칼럼명" + count);
+            nodeTd1.appendChild(nodetext1);
+            nodeTd2.appendChild(nodetext2);
+            nodeTr.appendChild(nodeTd1);
+            nodeTr.appendChild(nodeTd2);
+            document.getElementsByTagName("tbody")[0].appendChild(nodeTr);
+
+            ++count;
+        }
+        document.getElementById("btn-add").addEventListener("click", cbF4)
+
+
+
+    </script>
+
+    <script>
+        var cbF1 = function () {
             console.log("고전 방식 : 이벤트 발생하여 callback함수 호출되었다");
         };
-        function cbF2(){
+        function cbF2() {
             console.log("표준 방식 : 이벤트 발생하여 callback함수 호출..");
         };
-        var cbF3 = function(){
+        var cbF3 = function () {
             console.log("인라인 방식 : 이벤트 발생하여 callback함수 호출되었다");
             return false;  //submit 되게 할건지 말건지(중복확인 같은 곳에서 사용)
         };
@@ -66,7 +119,7 @@
 
 
     </script>
-   
+
 </body>
 
 </html>
