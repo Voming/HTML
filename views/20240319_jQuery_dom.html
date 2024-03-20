@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- jQurey 스크립트 사이에 코드 넣으면 안됨  -->
+    <!-- jQurey js 파일은 상단에 위치함 -->
+    <script src="https://code.jquery.com/jquery-3.7.1.js"
+        integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <button type="button" id="btn-add">추가</button>
+    <table border="1">
+        <thead>
+            <tr id="tbl-col">
+                <td style="color: red;">칼럼명</td>
+                <td>칼럼명</td>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>1</td>
+                <td>1</td>
+            </tr>
+            <tr>
+                <td>2</td>
+                <td>2</td>
+            </tr>
+            <tr>
+                <td>3</td>
+                <td>3</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <script>
+        //get() : jQuery -> dom형태
+        console.log($("tr").first());  
+        console.log($("tr").last());  
+        console.log(document.getElementsByTagName("tr")[document.getElementsByTagName("tr").length-1]); //과 동일
+      
+    </script>
+    <!-- js 파일은 대부분 하단에 위치함 -->
+</body>
+
+</html>

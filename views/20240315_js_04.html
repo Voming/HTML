@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript 01</title>
+    <script>
+       
+    </script>
+</head>
+<body>
+    <h1 id="id2">true / false 자바와 달라요</h1>
+    <h1 class="c2">자료형 object (array포함) 출력console 방법</h1>
+    <script>
+        var a1 = true;  
+        var a2 = 1; 
+        console.log((a1==a2)? "==같다":  "==다르다");  //==같다 출력
+        a2 = "aaa";
+        if(a2){
+            console.log("a2가 true임")
+        } else {
+            console.log("a2값이 0인 경우 false")
+        }
+        //String, 음수, 양수, 실수 - true임
+        //0, undifined, null, NaN, ''빈문자 - false 임
+
+        var a3 =[];
+        console.log(typeof a3); //배열도 object 자료형
+        a3.push("a");
+        a3.push("b");
+        console.log(a3); //['a', 'b']
+
+        a3 = {};
+        console.log(typeof a3); //object
+        console.log(a3); //{}
+        a3.k1 = "v1"; 
+        a3["k2"] = "v2";
+        console.log(a3); //{k1: 'v1', k2: 'v2'}
+
+        for(var key in a3){
+            console.log(a3[key]) //v1 //v2  //이 방법이 중요함
+        }
+
+        var arr = ["apple","banana"];
+        var obj = {k1 : "seoul"
+                , k2 : "daejeon"
+                , key : "이거이거"
+                };
+        console.log(arr);
+        console.log(obj);
+        console.log(arr+":문자와함께작성하면"); //[ap]ple,banana]:문자와함께작성하면
+        console.log(obj+":문자와함께작성하면"); //[object Object]:문자와함께작성하면
+    </script>    
+</body>
+</html>

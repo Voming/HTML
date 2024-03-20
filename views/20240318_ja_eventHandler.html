@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <button type="button" id="btn1">버튼 1</button>
+    <button type="button" id="btn2">버튼 2</button>
+    <!-- 실행까지 해주는 인라인 방식 -->
+    <!-- <button type="button" id="btn3" onclick="(function(){
+        console.log('인라인 방식 : 이벤트가 발생하여 callback함수 호출됨');
+    })()">버튼 3</button> -->
+    <button type="button" id="btn3" onclick="cbF3(); console.log('여러줄 가능');">버튼 3</button>
+
+    <!-- onsubmit에 쓸 frm-test -->
+    <form method="get" actino="#" id="frm-test">
+        <input type="text" name="n1">
+        <!-- 원래 false 였다가 inline 까지만 되고 submit이 안됨 -->
+        <!-- onclick을 쓸때는 의도에 맞게 짜야함 -->
+        <!-- id와 이벤트 등록을 혼합해서 사용하지 말기, 혼선을 줌 -->
+        <button type="submit" onclick="return cbF3();">전달</button>
+    </form>
+
+    <button type="button" id="btn-add">추가</button>
+    <table border="1">
+        <thead>
+            <tr id="tbl-col">
+                <td style="color: red;">칼럼명</td>
+                <td>칼럼명</td>
+            </tr>
+            <!-- <tr>
+                <td>1</td>
+                <td>칼럼명</td>
+            </tr>
+            <tr>
+                <td>2</td>
+                <td>칼럼명</td>  이런 식으로 추가 되기를 원함-->
+            </tr>
+        </thead>
+        <tbody>
+
+        </tbody>
+    </table>
+
+    <script>
+        let count = 1;
+        var cbF4 = function () {
+            // 방법 1
+            console.log("cbF4동작확인");
+            var htmlValue = "";
+            htmlValue += '<tr>';
+            htmlValue += '    <td>' + count + '</td>';
+            htmlValue += '    <td>칼럼명' + count + '</td>';
+            htmlValue += '</tr>';
+            document.getElementsByTagName("tbody")[0].innerHTML += htmlValue; // 계속 들어가게 하려면 +=를 사용해줌
+
+            // 방법 2
+            var nodeTr = document.createElement("tr");
+            var nodeTd1 = document.createElement("td");
+            var nodeTd2 = document.createElement("td");
+            var nodetext1 = document.createTextNode(count);
+            var nodetext2 = document.createTextNode("칼럼명" + count);
+            nodeTd1.appendChild(nodetext1);
+            nodeTd2.appendChild(nodetext2);
+            nodeTr.appendChild(nodeTd1);
+            nodeTr.appendChild(nodeTd2);
+            document.getElementsByTagName("tbody")[0].appendChild(nodeTr);
+
+            ++count;
+        }
+        document.getElementById("btn-add").addEventListener("click", cbF4)
+
+
+
+    </script>
+
+    <script>
+        var cbF1 = function () {
+            console.log("고전 방식 : 이벤트 발생하여 callback함수 호출되었다");
+        };
+        function cbF2() {
+            console.log("표준 방식 : 이벤트 발생하여 callback함수 호출..");
+        };
+        var cbF3 = function () {
+            console.log("인라인 방식 : 이벤트 발생하여 callback함수 호출되었다");
+            return false;  //submit 되게 할건지 말건지(중복확인 같은 곳에서 사용)
+        };
+
+
+        var btnElem = document.getElementById("btn1");
+        console.log(btnElem);
+        console.log(typeof btnElem);   //object
+        // btnElem.onclick = function () {
+        //     console.log("고전방식 이벤트 발생하여 callback함수 호출되었다");
+        // };
+        btnElem.onclick = cbF1;  //괄호 치지 않음
+
+        var btnElem2 = document.getElementById("btn2");
+        // btnElem2.addEventListener("click", function () {
+        //     console.log("고전방식 이벤트 발생하여 callback함수 호출되었다");
+        // });
+        btnElem2.addEventListener("click", cbF2);  //괄호 치지 않음
+
+        //하면 안되는 행동
+        var btnElem3 = document.getElementById("btn3");
+        btnElem3.addEventListener("click", cbF2);
+        //btnElem3.onclick = cbF1;
+        //결과 : 인라인은 사라지고 고전 -> 표준 순으로 실행된다.
+        //만약 인라인, 표준만 있으면 둘다 실행됨(인라인 -> 표준)
+        //만약 고전, 표준만 있으면 둘다 실행됨(순서는 입력한대로)
+        //만약 인라인, 고전만 있으면 고전만 실행됨(사실상 고전과 인라인은 같음)
+
+        var frmEle = document.getElementById("frm-test");
+        frmEle.onsubmit = cbF1;  //메시지가 순식간에 사라짐
+
+
+    </script>
+
+</body>
+
+</html>
