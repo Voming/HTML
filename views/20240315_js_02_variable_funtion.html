@@ -1,51 +1,63 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>JavaScript 01</title>
     <script>
-        function f1() {
+        function f1 () {
             a4 = 4;
-            var a3 = 3;  // 지역변수는 함수 내부에서 var 선언
+            var a3 = 3;  // 지역변수는 함수내부에서 var 선언
+         
+            let f2 = function () {
+                a4 = 4;
+                var a3 = 3;  // 지역변수는 함수내부에서 var 선언
+                console.log("이곳 - 3 : a1 : " + a1);
+                console.log("이곳 - 3 : a2 : " + a2);
+                console.log("이곳 - 3 : a3 : " + a3);
+                console.log("이곳 - 3 : a4 : " + a4);
+            };
             console.log("이곳 - 3 : a1 : " + a1);
             console.log("이곳 - 3 : a2 : " + a2);
             console.log("이곳 - 3 : a3 : " + a3);
             console.log("이곳 - 3 : a4 : " + a4);
+            f2();
         }
+        //전역변수로 쓸 변수를 let 선언
+        //let 같은이름으로 중복선언 불가 
+        let a1 = 1;
+        let a2 = 2;
+        let a4;
     </script>
-
 </head>
-
 <body>
     <h1 id="id2">JavaScript 처음</h1>
     <h1 class="c2">JavaScript 처음2</h1>
     <h1 class="c2">JavaScript 처음3</h1>
     <script>
-        //전역변수로 쓸 변수 let선언
-        var a1;   // 또 선언해도 괜찮음
-        var a2;
-        let a3;   // let 같은 이름으로 중복 선언 불가
-        let a4;
-        f1();  // 위 함수 호출 실행
-        //오류console.log("이곳 -6 : a3 : " + a3);
-        console.log("이곳 -6 : a4 : " + a4);  // 함수를 미리 읽어서 a4의 값을 알 수 있음
+        console.log("이곳 -6 : a4 : " + a4);
+        
+        // 중복 선언 가능함. 
+        var a10;
+        var a11;
+        var sum;
+        var sum;
+        for(var i=0; i<10; i++)  {
+            console.log(i);
+        }
+        //f2();
 
-        var a1 = 1;  // 전역
+        f1();  /// 위 함수 호출 실행
         console.log("이곳 - 1 : a1 : " + a1);
         console.log("이곳 - 1 : a2 : " + a2);
-        //오류 console.log("이곳 - 1 : a3 : " + a3);
-        //오류 console.log("이곳 - 1 : a4 : " + a4);
-        { //가독성용 블럭
-            var a2 = 2; // 전역(함수 안이 아니기 때문)
+        //지역오류 console.log("이곳 - 1 : a3 : " + a3);
+        console.log("이곳 - 1 : a4 : " + a4);
+        {
             console.log("이곳 - 2 : a1 : " + a1);
             console.log("이곳 - 2 : a2 : " + a2);
             //오류 console.log("이곳 - 2 : a3 : " + a3);
-            //오류 console.log("이곳 - 2 : a4 : " + a4);
+            console.log("이곳 - 2 : a4 : " + a4);
         }
-
-        //오류console.log("이곳 - 5 : a4 : " + a4);
     </script>
     <script>
         f1();  /// 위 함수 호출 실행
@@ -55,5 +67,4 @@
         console.log("이곳 - 4 : a4 : " + a4);
     </script>
 </body>
-
 </html>
