@@ -38,10 +38,28 @@
 
     <script>
         //get() : jQuery -> dom형태
-        console.log($("tr").first());  
-        console.log($("tr").last());  
-        console.log(document.getElementsByTagName("tr")[document.getElementsByTagName("tr").length-1]); //과 동일
-      
+        console.log($("tr").first());
+        console.log($("tr").last());
+        console.log(document.getElementsByTagName("tr")[document.getElementsByTagName("tr").length - 1]); //과 동일
+
+
+
+        var arr = [10, 20, 30, 40];
+        var obj= {k1:10,k2:20,k3:30,k4:40};
+        function cbEachF1(a1, a2) {
+            console.log("each함수 실행");
+            console.log(a1);  //index
+            console.log(a2);  //item value
+        };
+        $.each(arr, cbEachF1);
+        $.each(obj, cbEachF1);
+        $("td").each(cbEachF1);
+        // for (var a1 in arr) {
+        //     console.log("for in");
+        //     console.log(a1);
+        //     console.log(arr[a1]);
+        // };
+
     </script>
     <!-- js 파일은 대부분 하단에 위치함 -->
 </body>

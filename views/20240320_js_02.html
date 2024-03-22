@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="cafe-table">
+        <h2>주문 계산기</h2>
+        <table border="1">
+            <thead>
+                <tr style="font-weight: bold;">
+                    <td style="width: 150px;">메뉴</td>
+                    <td>가격</td>
+                    <td style="width: 150px;">수량</td>
+                    <td style="width: 150px;">합계</td>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>아메리카노</td>
+                    <td>1500</td>
+                    <td><input type="text" name="c1"></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>카페라떼</td>
+                    <td>2000</td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>생강라떼</td>
+                    <td>3500</td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>생딸기라떼</td>
+                    <td>4000</td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>합계</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+            </tbody>
+            <tfoot>
+                <tr>
+                    <td colspan="4">
+                        <button type="button" class="btn calc">계산하기</button>
+                    </td>
+                    <td>
+                        <button type="reset" class="btn reset">초기화</button>
+                    </td>
+                </tr>
+            </tfoot>
+        </table>
+    </div>
+</body>
+
+</html>
